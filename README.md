@@ -17,6 +17,10 @@ Framer project link:
 
 - https://framer.com/projects/Outstanding-Network--onqzP5HNMLJcpKnf3agk
 
+## Live Demo
+
+- https://rachitmittal-20.github.io/Auris_Pro/
+
 ## Tech Stack
 
 - HTML5
