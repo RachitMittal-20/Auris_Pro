@@ -11,6 +11,12 @@ This project focuses on delivering a modern marketing page that balances aesthet
 - Smooth motion and hover states with mobile-aware performance tuning
 - Clear content hierarchy and scalable styling architecture
 
+The architecture and wireframe foundation for this project were created in Framer, then carried into a production-style frontend implementation.
+
+Framer project link:
+
+- https://framer.com/projects/Outstanding-Network--onqzP5HNMLJcpKnf3agk
+
 ## Tech Stack
 
 - HTML5
