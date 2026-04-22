@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Auris Pro | A True 3D Headphone Experience</title>
+    <meta
+      name="description"
+      content="Auris Pro is a premium 3D headphone landing page with a fully original procedural model, scroll-driven 360 viewing, and an exploded engineering walkthrough."
+    >
+    <meta
+      name="keywords"
+      content="Auris Pro, premium headphones, 3D headphone website, spatial audio, adaptive ANC, luxury headphone landing page"
+    >
+    <meta name="author" content="Auris Audio">
+    <meta name="theme-color" content="#050608">
+    <link rel="canonical" href="https://aurispro.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Auris Pro | A True 3D Headphone Experience">
+    <meta
+      property="og:description"
+      content="Scroll through a true 3D Auris Pro experience with full 360 motion, premium materials, and an exploded engineering reveal."
+    >
+    <meta property="og:url" content="https://aurispro.com/">
+    <meta property="og:site_name" content="Auris Pro">
+    <meta property="og:image" content="https://aurispro.com/assets/auris-pro-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Auris Pro | A True 3D Headphone Experience">
+    <meta
+      name="twitter:description"
+      content="A premium one-page headphone experience with original true 3D product motion and scroll-driven engineering storytelling."
+    >
+    <meta name="twitter:image" content="https://aurispro.com/assets/auris-pro-og.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Auris Pro",
+        "description": "Premium wireless over-ear headphones with adaptive ANC, spatial audio, and a custom 40mm dynamic driver platform.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Auris Audio"
+        },
+        "category": "Headphones",
+        "offers": {
+          "@type": "Offer",
+          "price": "349",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://aurispro.com/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="page-grain" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+      <div class="shell">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="#top" aria-label="Auris Pro home">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span class="brand__wordmark">Auris Pro</span>
+          </a>
+
+          <button
+            class="nav__toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open navigation menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="nav__menu" id="nav-menu">
+            <a href="#tour">Story</a>
+            <a href="#performance">Performance</a>
+            <a href="#finishes">Finishes</a>
+            <a href="#specs">Specs</a>
+            <a class="button button--solid button--nav" href="#purchase">Pre-order</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="tour" id="tour" aria-labelledby="hero-title">
+        <div class="tour__stage">
+          <canvas class="tour__canvas" id="scene-canvas" aria-hidden="true"></canvas>
+          <div class="tour__backdrop" aria-hidden="true"></div>
+        </div>
+
+        <div class="tour__chapters">
+          <article class="chapter chapter--hero is-active" data-phase="hero" id="hero">
+            <div class="chapter__shell chapter__shell--hero">
+              <div class="chapter__copy chapter__copy--hero">
+                <p class="eyebrow">Auris Pro / original over-ear design</p>
+                <h1 class="chapter__title chapter__title--hero" id="hero-title">
+                  Silence,
+                  <span>shaped into motion.</span>
+                </h1>
+                <p class="chapter__body chapter__body--hero">
+                  Auris Pro is rebuilt as a true 3D object with a living silhouette, slower luxury
+                  motion, and a private listening room carved out of adaptive noise control,
+                  head-tracked spatial audio, and premium material design.
+                </p>
+                <p class="chapter__line">A sculpted over-ear instrument for deeper listening.</p>
+
+                <div class="chapter__actions">
+                  <a class="button button--solid" href="#purchase">Reserve Auris Pro</a>
+                  <a class="button button--ghost" href="#band-detail">Start the teardown</a>
+                </div>
+              </div>
+
+              <div class="hero-metrics" aria-label="Auris Pro key metrics">
+                <div class="metric-card">
+                  <strong>40 hr</strong>
+                  <span>Battery with ANC engaged</span>
+                </div>
+                <div class="metric-card">
+                  <strong>-48 dB</strong>
+                  <span>Adaptive silence response</span>
+                </div>
+                <div class="metric-card">
+                  <strong>40 mm</strong>
+                  <span>Custom dynamic driver core</span>
+                </div>
+                <div class="metric-card">
+                  <strong>360°</strong>
+                  <span>Scroll-driven full product view</span>
+                </div>
+              </div>
+
+              <div class="drag-surface" id="drag-surface" aria-hidden="true">
+                <span>Drag to orbit the headphone</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--right" data-phase="orbit">
+            <div class="chapter__shell">
+              <div class="chapter__copy">
+                <p class="eyebrow">360 product view</p>
+                <h2 class="chapter__title">
+                  One full turn.
+                  <span>A new expression at every angle.</span>
+                </h2>
+                <p class="chapter__body">
+                  Scroll through a full 360-degree rotation and the object changes character: canopy,
+                  cups, pivots, and interior acoustics each step forward as the form moves through
+                  light instead of sitting flat on the page.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--left" data-phase="silence">
+            <div class="chapter__shell">
+              <div class="chapter__copy">
+                <p class="eyebrow">Listening room</p>
+                <h2 class="chapter__title">
+                  Stillness first.
+                  <span>Then the music opens up.</span>
+                </h2>
+                <p class="chapter__body">
+                  Auris Pro is tuned for a calm image and long-session comfort. The room stays
+                  controlled, the stage stays dimensional, and the object feels quieter the longer
+                  you wear it.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--right chapter--detail" data-phase="band" id="band-detail">
+            <div class="chapter__shell">
+              <div class="chapter__copy chapter__copy--detail">
+                <p class="eyebrow">Engineering / 01</p>
+                <h2 class="chapter__title">
+                  Floating arc headband
+                  <span>built to disappear on the head.</span>
+                </h2>
+                <p class="chapter__body">
+                  A suspended carbon-composite arc carries the structure without adding visual bulk.
+                  It spreads pressure evenly, keeps the profile light, and gives the silhouette a more
+                  architectural top line.
+                </p>
+                <p class="chapter__stat">261 g total headset weight</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--left chapter--detail" data-phase="yoke">
+            <div class="chapter__shell">
+              <div class="chapter__copy chapter__copy--detail">
+                <p class="eyebrow">Engineering / 02</p>
+                <h2 class="chapter__title">
+                  Precision pivot arms
+                  <span>that move with intent.</span>
+                </h2>
+                <p class="chapter__body">
+                  Machined alloy pivots carry the cup geometry, guide the rotation cleanly, and make
+                  every motion feel measured. They hold alignment without looking mechanical from the
+                  front view.
+                </p>
+                <p class="chapter__stat">Anodized alloy bridge system</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--right chapter--detail" data-phase="shell">
+            <div class="chapter__shell">
+              <div class="chapter__copy chapter__copy--detail">
+                <p class="eyebrow">Engineering / 03</p>
+                <h2 class="chapter__title">
+                  Acoustic chambers
+                  <span>shaped for depth, not boom.</span>
+                </h2>
+                <p class="chapter__body">
+                  The ear cups are built as controlled chambers with a premium shell and a calmer
+                  reflective profile. Bass feels tighter, the midrange stays cleaner, and the ANC has
+                  a more stable platform to work from.
+                </p>
+                <p class="chapter__stat">Adaptive ANC up to -48 dB</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--left chapter--detail" data-phase="cushion">
+            <div class="chapter__shell">
+              <div class="chapter__copy chapter__copy--detail">
+                <p class="eyebrow">Engineering / 04</p>
+                <h2 class="chapter__title">
+                  Memory foam seal
+                  <span>that sits softer and seals better.</span>
+                </h2>
+                <p class="chapter__body">
+                  Dual-density cushions create a breathable acoustic seal around the ear. That improves
+                  comfort over long sessions while also strengthening passive isolation and perceived
+                  low-end extension.
+                </p>
+                <p class="chapter__stat">Breathable protein weave finish</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="chapter chapter--right chapter--detail" data-phase="driver">
+            <div class="chapter__shell">
+              <div class="chapter__copy chapter__copy--detail">
+                <p class="eyebrow">Engineering / 05</p>
+                <h2 class="chapter__title">
+                  Driver core
+                  <span>where speed becomes texture.</span>
+                </h2>
+                <p class="chapter__body">
+                  The custom 40 mm driver platform is built for faster transient recovery, cleaner edge
+                  definition, and a broader sense of air. Detail is easier to locate, even when the mix
+                  gets dense.
+                </p>
+                <p class="chapter__stat">3 Hz to 40 kHz frequency response</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="performance section" id="performance" data-cms-collection="feature_highlights">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow reveal">Core performance</p>
+            <h2 class="section-title reveal reveal--delay-1">
+              Built for listeners who notice the room around the music.
+            </h2>
+            <p class="section-body reveal reveal--delay-2">
+              The design feels sculptural on the surface, but the performance stack is serious
+              underneath: better noise control, deeper staging, faster transient response, and calmer
+              long-session comfort.
+            </p>
+          </div>
+
+          <div class="card-grid card-grid--three">
+            <article class="glass-card reveal" data-cms-item>
+              <span class="card-index">01</span>
+              <h3>Adaptive silence engine</h3>
+              <p>
+                Real-time environment mapping reshapes the cancellation profile throughout the day,
+                keeping commutes, flights, and office noise from flattening the music.
+              </p>
+              <strong>Eight-mic noise field analysis</strong>
+            </article>
+
+            <article class="glass-card reveal reveal--delay-1" data-cms-item>
+              <span class="card-index">02</span>
+              <h3>Spatial audio core</h3>
+              <p>
+                Head-tracked spatial rendering makes the soundstage feel wider without pulling vocals
+                out of focus or turning movement into a gimmick.
+              </p>
+              <strong>Personalised 360° staging</strong>
+            </article>
+
+            <article class="glass-card reveal reveal--delay-2" data-cms-item>
+              <span class="card-index">03</span>
+              <h3>Hi-res signal path</h3>
+              <p>
+                Wireless and wired playback stay flexible, from everyday streaming to studio-grade
+                monitoring and lower-latency sessions when you need a faster connection.
+              </p>
+              <strong>24-bit / 96 kHz capable chain</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="finishes section" id="finishes" data-cms-collection="finishes">
+        <div class="shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow reveal">Finish collection</p>
+              <h2 class="section-title reveal reveal--delay-1">
+                Three finishes tuned like objects, not accessories.
+              </h2>
+            </div>
+            <p class="section-body reveal reveal--delay-2">
+              The palette stays restrained and premium: dark mineral, warm alloy, and a quieter sand
+              metallic option for users who want the product to feel rare before they hear it.
+            </p>
+          </div>
+
+          <div class="card-grid card-grid--three">
+            <article class="finish-card reveal" data-cms-item>
+              <div class="finish-card__visual finish-card__visual--obsidian" role="img" aria-label="Auris Pro finish concept in Obsidian Graphite">
+                <div class="mini-headphone mini-headphone--obsidian" aria-hidden="true">
+                  <span class="mini-headphone__cup mini-headphone__cup--left"><span class="mini-headphone__ring"></span></span>
+                  <span class="mini-headphone__cup mini-headphone__cup--right"><span class="mini-headphone__ring"></span></span>
+                </div>
+              </div>
+              <div class="finish-card__body">
+                <h3>Obsidian Graphite</h3>
+                <p>A smoked graphite shell with cool alloy detailing and the most architectural silhouette.</p>
+              </div>
+            </article>
+
+            <article class="finish-card reveal reveal--delay-1" data-cms-item>
+              <div class="finish-card__visual finish-card__visual--mineral" role="img" aria-label="Auris Pro finish concept in Mineral Sand">
+                <div class="mini-headphone mini-headphone--mineral" aria-hidden="true">
+                  <span class="mini-headphone__cup mini-headphone__cup--left"><span class="mini-headphone__ring"></span></span>
+                  <span class="mini-headphone__cup mini-headphone__cup--right"><span class="mini-headphone__ring"></span></span>
+                </div>
+              </div>
+              <div class="finish-card__body">
+                <h3>Mineral Sand</h3>
+                <p>Warm mineral metal with a softer sheen and a more relaxed luxury character.</p>
+              </div>
+            </article>
+
+            <article class="finish-card reveal reveal--delay-2" data-cms-item>
+              <div class="finish-card__visual finish-card__visual--ember" role="img" aria-label="Auris Pro finish concept in Ember Bronze">
+                <div class="mini-headphone mini-headphone--ember" aria-hidden="true">
+                  <span class="mini-headphone__cup mini-headphone__cup--left"><span class="mini-headphone__ring"></span></span>
+                  <span class="mini-headphone__cup mini-headphone__cup--right"><span class="mini-headphone__ring"></span></span>
+                </div>
+              </div>
+              <div class="finish-card__body">
+                <h3>Ember Bronze</h3>
+                <p>Dark bronze shellwork for collectors who want the premium finish to feel more intimate and rare.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="spec-purchase section" id="specs">
+        <div class="shell spec-purchase__layout">
+          <article class="spec-table reveal" data-cms-collection="spec_rows">
+            <p class="eyebrow">Engineering sheet</p>
+            <h2 class="section-title section-title--compact">Everything tuned with intent.</h2>
+            <dl class="spec-table__rows">
+              <div data-cms-item>
+                <dt>Driver</dt>
+                <dd>40 mm custom dynamic driver</dd>
+              </div>
+              <div data-cms-item>
+                <dt>Wireless</dt>
+                <dd>Bluetooth 5.3 / LDAC / aptX HD / AAC</dd>
+              </div>
+              <div data-cms-item>
+                <dt>Battery</dt>
+                <dd>40 hours with ANC on</dd>
+              </div>
+              <div data-cms-item>
+                <dt>Quick charge</dt>
+                <dd>10 minutes for 5 hours</dd>
+              </div>
+              <div data-cms-item>
+                <dt>Weight</dt>
+                <dd>261 g suspended frame design</dd>
+              </div>
+              <div data-cms-item>
+                <dt>Warranty</dt>
+                <dd>3 years worldwide</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="purchase-panel reveal reveal--delay-1" id="purchase" data-cms-collection="price_tiers">
+            <p class="eyebrow">Purchase options</p>
+            <h2 class="section-title section-title--compact">Choose your Auris Pro.</h2>
+            <p class="section-body section-body--compact">
+              Free global shipping, a 30-day trial, and a premium unboxing flow designed to feel
+              as deliberate as the sound.
+            </p>
+
+            <div class="price-tier" data-cms-item>
+              <h3>Auris Pro</h3>
+              <p>The complete over-ear listening package.</p>
+              <div class="price-tier__price">$349</div>
+              <ul>
+                <li>Adaptive ANC engine</li>
+                <li>Spatial audio platform</li>
+                <li>40-hour battery</li>
+                <li>Protective travel case</li>
+              </ul>
+              <a class="button button--solid" href="#top">Order Auris Pro</a>
+            </div>
+
+            <div class="price-tier price-tier--featured" data-cms-item>
+              <span class="price-tier__flag">Best value</span>
+              <h3>Auris Pro Max</h3>
+              <p>For listeners who want the full stack.</p>
+              <div class="price-tier__price">$449</div>
+              <ul>
+                <li>Everything in Auris Pro</li>
+                <li>Expanded driver platform</li>
+                <li>60-hour battery</li>
+                <li>Wireless charging dock</li>
+              </ul>
+              <a class="button button--ghost" href="#top">Order Auris Pro Max</a>
+            </div>
+          </article>
+
+          <article class="prebook-panel reveal reveal--delay-2" data-prebook-panel>
+            <p class="eyebrow">Buy this product</p>
+            <h2 class="section-title section-title--compact">Pick a finish and pre-book.</h2>
+            <p class="section-body section-body--compact">
+              Select your preferred colorway and proceed to pre-book Auris Pro with priority
+              shipping access.
+            </p>
+
+            <form class="prebook-form" data-prebook-form>
+              <fieldset>
+                <legend>Select a finish</legend>
+
+                <label class="finish-option">
+                  <input type="radio" name="finish" value="Obsidian Graphite" checked>
+                  <span class="finish-option__dot finish-option__dot--obsidian" aria-hidden="true"></span>
+                  <span class="finish-option__label">Obsidian Graphite</span>
+                </label>
+
+                <label class="finish-option">
+                  <input type="radio" name="finish" value="Mineral Sand">
+                  <span class="finish-option__dot finish-option__dot--mineral" aria-hidden="true"></span>
+                  <span class="finish-option__label">Mineral Sand</span>
+                </label>
+
+                <label class="finish-option">
+                  <input type="radio" name="finish" value="Ember Bronze">
+                  <span class="finish-option__dot finish-option__dot--ember" aria-hidden="true"></span>
+                  <span class="finish-option__label">Ember Bronze</span>
+                </label>
+              </fieldset>
+
+              <p class="prebook-form__selected">
+                Selected finish:
+                <strong id="selected-finish">Obsidian Graphite</strong>
+              </p>
+
+              <a
+                class="button button--solid"
+                id="prebook-link"
+                href="mailto:orders@aurispro.com?subject=Pre-book%20Auris%20Pro%20-%20Obsidian%20Graphite"
+              >
+                Pre-book now
+              </a>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <section class="reviews section" data-cms-collection="reviews">
+        <div class="shell">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow reveal">Trusted by listeners</p>
+              <h2 class="section-title reveal reveal--delay-1">
+                Premium sound, calmer fit, less fatigue.
+              </h2>
+            </div>
+            <p class="section-body reveal reveal--delay-2">
+              The response stays consistent: more dimensional staging, better comfort over time, and
+              a product that finally looks as refined as the sound inside it.
+            </p>
+          </div>
+
+          <div class="card-grid card-grid--three">
+            <article class="quote-card reveal" data-cms-item>
+              <p>“The first headphone page I’ve seen where the product actually feels alive before you even press play.”</p>
+              <footer>
+                <strong>Marcus Reynolds</strong>
+                <span>Senior audio engineer</span>
+              </footer>
+            </article>
+
+            <article class="quote-card reveal reveal--delay-1" data-cms-item>
+              <p>“The sense of depth is what stays with me. It sounds composed and it looks genuinely expensive.”</p>
+              <footer>
+                <strong>Sofia Lindqvist</strong>
+                <span>Producer and composer</span>
+              </footer>
+            </article>
+
+            <article class="quote-card reveal reveal--delay-2" data-cms-item>
+              <p>“It finally feels like a premium over-ear object, not a marketing render wrapped around a spec sheet.”</p>
+              <footer>
+                <strong>Daniel Kim</strong>
+                <span>Technology writer</span>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta section">
+        <div class="shell shell--narrow cta__panel">
+          <p class="eyebrow reveal">Available now</p>
+          <h2 class="section-title reveal reveal--delay-1">
+            Bring home the headphone that moves like a product, not a placeholder.
+          </h2>
+          <p class="section-body reveal reveal--delay-2">
+            Auris Pro now has a true 3D story, a calmer premium visual system, and a product flow
+            designed to hold attention from the first frame to the teardown.
+          </p>
+          <div class="chapter__actions reveal reveal--delay-3">
+            <a class="button button--solid" href="#purchase">Reserve yours</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__layout">
+        <div>
+          <a class="brand" href="#top" aria-label="Auris Pro home">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span class="brand__wordmark">Auris Pro</span>
+          </a>
+          <p class="site-footer__copy">
+            Premium wireless headphones engineered for listeners who want depth, control, and a more
+            refined product story.
+          </p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Footer">
+          <a href="#tour">Story</a>
+          <a href="#performance">Performance</a>
+          <a href="#finishes">Finishes</a>
+          <a href="#specs">Specs</a>
+          <a href="#purchase">Buy</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>
